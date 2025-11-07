@@ -1,6 +1,7 @@
 import os
 import sys
-from google.genai import Client # Imports the specific Client class
+# CORRECT IMPORTS for the modern google-genai package
+from google.genai import Client 
 from google.genai.errors import APIError 
 
 # 1. Define the 'out' action (Simple print wrapper)
@@ -13,7 +14,6 @@ def out(text: str):
 class LLMGenerator:
     """Wrapper for LLM generation using the Google GenAI SDK."""
     
-    # CRITICAL FIX: Ensure 'generate' is correctly defined as an instance method.
     def generate(self, prompt: str, model: str, max_tokens: int) -> str:
         api_key = os.environ.get("GEMINI_API_KEY")
         
@@ -21,6 +21,7 @@ class LLMGenerator:
             return "LLM Summary Placeholder: Could not generate summary. GEMINI_API_KEY environment variable is not set."
         
         try:
+            # Client is imported as 'Client' (from 'from google.genai import Client')
             client = Client(api_key=api_key)
             
             config = {
@@ -53,6 +54,7 @@ class LLMGenerator:
                 )
             
         except APIError as e:
+            # APIError is correctly imported from google.genai.errors
             return f"LLM API Error: Failed to generate content. Error: {e}"
         except Exception as e:
             return f"An unexpected error occurred during LLM generation: {e}"
