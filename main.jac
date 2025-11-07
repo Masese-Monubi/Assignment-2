@@ -1,1 +1,5 @@
-import agents.repo_mapper as repo_mapper;
+import agents.repo_mapper as mapper;
+
+with entry {
+    mapper();
+}

@@ -1,0 +1,43 @@
+(venv) PS C:\Assignment 2> jac run main.jac
+--- Step 1: Cloning Repository ---
+✅ Success! Repository cloned to: cloned_repos\Masese
+--- Step 2: Mapping Repository Structure ---
+✅ File tree generated.
+⚠️ WARNING: README not found/empty. Using a generic fallback description for the  summary.
+⚠️ Attempting LLM Summary. (Requires GEMINI_API_KEY)
+INFO - AFC is enabled with max remote calls: 10.
+INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+--- WARNING: LLM STUBBORNLY REFUSED OUTPUT. USING HARDCODED FALLBACK SUMMARY. ---
+✅ LLM Summary complete.
+
+*** FILE TREE (Partial) ***
+Masese/
+
+*** README SUMMARY (for Supervisor Planning) ***
+**Project Purpose:** This repository contains a template for a basic portfolio website. Its primary purpose is to serve as a minimal, static web presence, demonstrating core HTML and CSS skills.
+
+**Key Features:** The repository features an `index.html` as the main page and a `style.css` file for styling. It also includes a small utility Python script which may be used for local server testing or deployment scripts. The structure is highly modular and beginner-friendly.
+
+**Installation Instructions:** The project does not require complex installation. To run, clone the repository, navigate to the local directory, and open `index.html` directly in any web browser.
+ERROR - Error executing module __main__: 'module' object is not callable
+ERROR - Error: 'module' object is not callable
+    2 |
+    3 | with entry {
+    4 |     mapper();
+      |     ^^^^^^^^
+    5 | }
+  at <module> C:\Assignment 2\main.jac:4
+Error: 'module' object is not callable
+    2 |
+    3 | with entry {
+    4 |     mapper();
+      |     ^^^^^^^^
+    5 | }
+  at <module> C:\Assignment 2\main.jac:4
+  at exec_module() C:\Assignment 2\venv\Lib\site-packages\jaclang\runtimelib\meta_importer.py:195
+  at jac_import() C:\Assignment 2\venv\Lib\site-packages\jaclang\runtimelib\machine.py:1066
+  at _multicall() C:\Assignment 2\venv\Lib\site-packages\jaclang\vendor\pluggy\_callers.py:103
+  at _multicall() C:\Assignment 2\venv\Lib\site-packages\jaclang\vendor\pluggy\_callers.py:139
+  at _hookexec() C:\Assignment 2\venv\Lib\site-packages\jaclang\vendor\pluggy\_manager.py:120
+  at __call__() C:\Assignment 2\venv\Lib\site-packages\jaclang\vendor\pluggy\_hooks.py:513
+  at proxy() C:\Assignment 2\venv\Lib\site-packages\jaclang\runtimelib\machine.py:1827
