@@ -4,7 +4,7 @@ import helpers.repo_tools as repo_tools;
 
 walker repo_mapper {
     # TEMPORARY FIX: URL is hardcoded to bypass the broken 'jac run' argument passing.
-    has repo_url: str = "https://github.com/Masese-Monubi/Assignment-2.git";
+    has repo_url: str = "https://github.com/Masese-Monubi/Masese.git";
 
     # Internal state variables for the walker's execution.
     has local_repo_path: str = "";
