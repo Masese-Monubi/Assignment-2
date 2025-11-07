@@ -1,9 +1,8 @@
-# Final deployment cache bust
 import os
 import sys
-# CORRECT IMPORTS for the modern google-genai package
-from google.genai import Client 
-from google.genai.errors import APIError 
+# CORRECT IMPORTS using aliases to avoid namespace conflicts on Streamlit:
+from google.genai import Client as GeminiClient 
+from google.genai.errors import APIError as APIErrorAlias 
 
 # 1. Define the 'out' action (Simple print wrapper)
 def out(text: str):
@@ -22,8 +21,8 @@ class LLMGenerator:
             return "LLM Summary Placeholder: Could not generate summary. GEMINI_API_KEY environment variable is not set."
         
         try:
-            # Client is imported as 'Client' (from 'from google.genai import Client')
-            client = Client(api_key=api_key)
+            # Uses the aliased client: GeminiClient
+            client = GeminiClient(api_key=api_key)
             
             config = {
                 "max_output_tokens": max_tokens,
@@ -54,8 +53,8 @@ class LLMGenerator:
                     "To run, clone the repository, navigate to the local directory, and open `index.html` directly in any web browser."
                 )
             
-        except APIError as e:
-            # APIError is correctly imported from google.genai.errors
+        except APIErrorAlias as e:
+            # Uses the aliased error class: APIErrorAlias
             return f"LLM API Error: Failed to generate content. Error: {e}"
         except Exception as e:
             return f"An unexpected error occurred during LLM generation: {e}"
