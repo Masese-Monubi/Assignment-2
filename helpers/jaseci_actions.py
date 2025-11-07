@@ -1,6 +1,6 @@
 import os
 import sys
-from google import genai
+from google.genai import Client # Imports the specific Client class
 from google.genai.errors import APIError 
 
 # 1. Define the 'out' action (Simple print wrapper)
@@ -21,7 +21,7 @@ class LLMGenerator:
             return "LLM Summary Placeholder: Could not generate summary. GEMINI_API_KEY environment variable is not set."
         
         try:
-            client = genai.Client(api_key=api_key)
+            client = Client(api_key=api_key)
             
             config = {
                 "max_output_tokens": max_tokens,

@@ -1,3 +1,3 @@
 google-genai
-# Added the broader package which often resolves naming conflicts
-google-api-core
+google-gemini # Include the older SDK just in case of versioning issues
+google-api-core # Keep the broad API base package
